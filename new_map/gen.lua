@@ -6,7 +6,7 @@ local function map_init(mapmeta)
 		np_vals = {
 			offset = 0,
 			scale = 1,
-			spread = {x=784, y=145, z=784},
+			spread = {x=1084, y=145, z=784},
 			seed = LuaMap.generate_seed(),
 			octaves = 5,
 			persist = 0.63,
@@ -55,6 +55,7 @@ local function map_generator(mapmeta)
 
 	ctf_map.place_flags(mapmeta, data, area, 3)
 
+	ctf_map.allocate_chests(mapmeta, data, area, 70, vector.new(100, 10, 60))
 	vm:set_data(data)
 	vm:write_to_map()
 	vm:update_map()
